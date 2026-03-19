@@ -11,6 +11,8 @@ import { useState } from "react";
 
 const PREMIUM_RAZORPAY_URL =
   "https://razorpay.me/@jittaboinaajay?amount=cZFKpDUaadfgpLOW1lSJHw%3D%3D";
+const ELITE_RAZORPAY_URL =
+  "https://razorpay.me/@jittaboinaajay?amount=CVDUr6Uxp2FOGZGwAHntNg%3D%3D";
 
 interface Plan {
   id: string;
@@ -75,6 +77,8 @@ const PLANS: Plan[] = [
       "Shareable PDF report",
     ],
     highlighted: false,
+    badge: "Elite",
+    razorpayUrl: ELITE_RAZORPAY_URL,
   },
 ];
 
@@ -149,7 +153,13 @@ export function PricingSection() {
             >
               {plan.badge && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-neon text-navy-900 text-xs font-bold px-3 py-1 rounded-full">
+                  <span
+                    className={`text-xs font-bold px-3 py-1 rounded-full ${
+                      plan.id === "elite"
+                        ? "bg-amber-400 text-navy-900"
+                        : "bg-neon text-navy-900"
+                    }`}
+                  >
                     {plan.badge}
                   </span>
                 </div>
@@ -159,7 +169,9 @@ export function PricingSection() {
                 className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
                   plan.highlighted
                     ? "bg-neon/20 text-neon"
-                    : "bg-navy-500/50 text-neon/70"
+                    : plan.id === "elite"
+                      ? "bg-amber-400/20 text-amber-400"
+                      : "bg-navy-500/50 text-neon/70"
                 }`}
               >
                 {plan.icon}
@@ -175,7 +187,11 @@ export function PricingSection() {
               <div className="flex items-baseline gap-2 mb-6">
                 <span
                   className={`text-4xl font-extrabold ${
-                    plan.highlighted ? "text-neon" : "text-foreground"
+                    plan.highlighted
+                      ? "text-neon"
+                      : plan.id === "elite"
+                        ? "text-amber-400"
+                        : "text-foreground"
                   }`}
                 >
                   {plan.price}
@@ -188,7 +204,11 @@ export function PricingSection() {
               <ul className="space-y-3 mb-8">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm">
-                    <Check className="w-4 h-4 text-neon flex-shrink-0 mt-0.5" />
+                    <Check
+                      className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
+                        plan.id === "elite" ? "text-amber-400" : "text-neon"
+                      }`}
+                    />
                     <span className="text-muted-foreground">{f}</span>
                   </li>
                 ))}
@@ -198,7 +218,11 @@ export function PricingSection() {
                 type="button"
                 onClick={() => handleSelectPlan(plan)}
                 className={`w-full rounded-full h-auto py-2.5 font-semibold ${
-                  plan.highlighted ? "btn-neon" : "btn-outline-neon"
+                  plan.highlighted
+                    ? "btn-neon"
+                    : plan.id === "elite"
+                      ? "bg-amber-400 text-navy-900 hover:bg-amber-300 border-0"
+                      : "btn-outline-neon"
                 }`}
                 data-ocid={`pricing.primary_button.${i + 1}`}
               >
@@ -225,11 +249,23 @@ export function PricingSection() {
 
           {!paymentSuccess ? (
             <div className="py-4">
-              <div className="bg-neon/5 border border-neon-border rounded-xl p-4 mb-6 text-center">
+              <div
+                className={`border rounded-xl p-4 mb-6 text-center ${
+                  selectedPlan?.id === "elite"
+                    ? "bg-amber-400/5 border-amber-400/30"
+                    : "bg-neon/5 border-neon-border"
+                }`}
+              >
                 <div className="text-sm text-muted-foreground mb-1">
                   {selectedPlan?.name} Plan
                 </div>
-                <div className="text-4xl font-extrabold text-neon">
+                <div
+                  className={`text-4xl font-extrabold ${
+                    selectedPlan?.id === "elite"
+                      ? "text-amber-400"
+                      : "text-neon"
+                  }`}
+                >
                   {selectedPlan?.price}
                 </div>
                 <div className="text-sm text-muted-foreground">
@@ -247,7 +283,11 @@ export function PricingSection() {
                   <Button
                     type="button"
                     onClick={() => openRazorpay(selectedPlan.razorpayUrl!)}
-                    className="btn-neon w-full rounded-full py-3 h-auto font-semibold"
+                    className={`w-full rounded-full py-3 h-auto font-semibold ${
+                      selectedPlan?.id === "elite"
+                        ? "bg-amber-400 text-navy-900 hover:bg-amber-300 border-0"
+                        : "btn-neon"
+                    }`}
                     data-ocid="pricing.confirm_button"
                   >
                     Pay {selectedPlan.price} via Razorpay
@@ -264,10 +304,15 @@ export function PricingSection() {
                         type="button"
                         variant="outline"
                         onClick={confirmRazorpayPayment}
-                        className="w-full rounded-full py-3 h-auto font-semibold border-neon/40 text-neon hover:bg-neon/10"
+                        className={`w-full rounded-full py-3 h-auto font-semibold ${
+                          selectedPlan?.id === "elite"
+                            ? "border-amber-400/40 text-amber-400 hover:bg-amber-400/10"
+                            : "border-neon/40 text-neon hover:bg-neon/10"
+                        }`}
                         data-ocid="pricing.confirm_button"
                       >
-                        ✅ I've Paid — Activate Premium
+                        ✅ I've Paid — Activate{" "}
+                        {selectedPlan?.id === "elite" ? "Elite" : "Premium"}
                       </Button>
                     </motion.div>
                   )}
@@ -281,7 +326,7 @@ export function PricingSection() {
                   </button>
                 </div>
               ) : (
-                /* Mock payment flow for Basic / Elite */
+                /* Mock payment flow for Basic */
                 <div>
                   <div className="space-y-3 mb-6">
                     <input
