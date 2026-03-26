@@ -44,9 +44,9 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6"
         >
-          Talk to AI Astrologer
+          Talk to a Vedic Astrologer
           <br />
-          <span className="gradient-text">for ₹10 – 5 Minutes</span>
+          <span className="gradient-text">First Question Free</span>
         </motion.h1>
 
         <motion.p
@@ -55,9 +55,9 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Unlock your cosmic destiny with personalized AI readings based on your
+          Unlock your cosmic destiny with personalized readings based on your
           birth chart. Get instant insights on love, career, and life — powered
-          by ancient Vedic wisdom and modern AI.
+          by ancient Vedic wisdom.
         </motion.p>
 
         <motion.div
@@ -73,7 +73,7 @@ export function HeroSection() {
             data-ocid="hero.primary_button"
           >
             <Sparkles className="w-5 h-5" />
-            Start Chat ₹10
+            Start Free Chat
           </button>
           <button
             type="button"
@@ -95,7 +95,7 @@ export function HeroSection() {
             { value: "50K+", label: "Readings Done" },
             { value: "4.9★", label: "Average Rating" },
             { value: "12", label: "Zodiac Signs" },
-            { value: "₹10", label: "Starting Price" },
+            { value: "₹100", label: "Premium Plan" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="text-2xl font-bold text-neon">{stat.value}</div>
