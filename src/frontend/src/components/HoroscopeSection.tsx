@@ -13,14 +13,14 @@ export function HoroscopeSection() {
           className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-border bg-neon/5 text-neon text-sm font-medium mb-4">
-            Today's Cosmic Energy
+            నేటి విశ్వ శక్తి
           </div>
           <h2 className="section-heading mb-3">
-            Daily <span>Horoscope</span>
+            రోజువారీ <span>రాశిఫలం</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            AI-powered daily readings for all 12 zodiac signs. Discover what the
-            cosmos has in store for you today.
+            అన్ని 12 రాశులకు AI-ఆధారిత రోజువారీ రీడింగ్‌లు. నేడు విశ్వం మీకు ఏమి సూచిస్తుందో
+            తెలుసుకోండి.
           </p>
         </motion.div>
 

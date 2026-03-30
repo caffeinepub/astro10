@@ -29,29 +29,27 @@ function InfinityIcon({ className }: { className?: string }) {
 const PREDICTION_CATEGORIES = [
   {
     id: "love",
-    label: "Love",
+    label: "ప్రేమ",
     icon: <Heart className="w-4 h-4" />,
-    heading: "Love & Relationships",
+    heading: "ప్రేమ & సంబంధాలు",
     description:
-      "Discover what the stars reveal about your romantic destiny and soul connections.",
+      "మీ రొమాంటిక్ విధి మరియు ఆత్మ సంబంధాల గురించి నక్షత్రాలు ఏమి వెల్లడిస్తాయో తెలుసుకోండి.",
     key: "love" as const,
   },
   {
     id: "career",
-    label: "Career",
+    label: "కెరీర్",
     icon: <Briefcase className="w-4 h-4" />,
-    heading: "Career & Success",
-    description:
-      "Cosmic insights into your professional path, ambitions, and financial prosperity.",
+    heading: "కెరీర్ & విజయం",
+    description: "మీ వృత్తిపరమైన మార్గం, ఆకాంక్షలు మరియు ఆర్థిక సమృద్ధిపై విశ్వ అంతర్దృష్టులు.",
     key: "career" as const,
   },
   {
     id: "life",
-    label: "Life",
+    label: "జీవితం",
     icon: <InfinityIcon className="w-4 h-4" />,
-    heading: "Life & Destiny",
-    description:
-      "Your broader life purpose, spiritual growth, and the journey your soul has chosen.",
+    heading: "జీవితం & విధి",
+    description: "మీ విస్తృత జీవిత లక్ష్యం, ఆధ్యాత్మిక వృద్ధి మరియు మీ ఆత్మ ఎంచుకున్న ప్రయాణం.",
     key: "life" as const,
   },
 ];
@@ -68,11 +66,10 @@ export function PredictionsSection() {
           className="text-center mb-14"
         >
           <h2 className="section-heading mb-3">
-            Cosmic <span>Predictions</span>
+            విశ్వ <span>అంచనాలు</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Explore AI-generated predictions for every zodiac sign across the
-            three pillars of life.
+            మూడు జీవిత స్తంభాల వ్యాప్తంగా ప్రతి రాశికి AI-ఆధారిత అంచనాలు అన్వేషించండి.
           </p>
         </motion.div>
 

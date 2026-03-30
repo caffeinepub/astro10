@@ -44,11 +44,11 @@ export function ContactSection() {
           className="text-center mb-14"
         >
           <h2 className="section-heading mb-3">
-            Get in <span>Touch</span>
+            <span>సంప్రదించండి</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Have questions about your reading or our service? We'd love to hear
-            from the cosmos — and from you.
+            మీ రీడింగ్ లేదా మా సేవ గురించి ప్రశ్నలు ఉన్నాయా? విశ్వం నుండి — మరియు మీ నుండి వినడానికి మేము
+            సంతోషిస్తాం.
           </p>
         </motion.div>
 
@@ -64,18 +64,18 @@ export function ContactSection() {
             {[
               {
                 icon: <Mail className="w-5 h-5 text-neon" />,
-                title: "Email Us",
+                title: "ఇమెయిల్ చేయండి",
                 value: "hello@astro10.in",
               },
               {
                 icon: <MessageSquare className="w-5 h-5 text-neon" />,
-                title: "Support Hours",
-                value: "9 AM – 9 PM IST, Daily",
+                title: "మద్దతు గంటలు",
+                value: "ఉ. 9 – రా. 9 IST, రోజూ",
               },
               {
                 icon: <User className="w-5 h-5 text-neon" />,
-                title: "Response Time",
-                value: "Within 24 hours",
+                title: "స్పందన సమయం",
+                value: "24 గంటల్లో",
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 items-start">
@@ -95,10 +95,10 @@ export function ContactSection() {
 
             <div className="card-surface rounded-xl p-5 border-l-2 border-neon mt-6">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                "The stars impel, they do not compel. Your destiny is written in
-                the cosmos, but you hold the pen."
+                "నక్షత్రాలు ప్రేరేపిస్తాయి, బలవంతం చేయవు. మీ విధి విశ్వంలో రాయబడింది, కానీ కలం మీ చేతిలో
+                ఉంది."
               </p>
-              <p className="text-xs text-neon mt-2">— Ancient Vedic Wisdom</p>
+              <p className="text-xs text-neon mt-2">— పురాతన వేద జ్ఞానం</p>
             </div>
           </motion.div>
 
@@ -118,13 +118,13 @@ export function ContactSection() {
                   htmlFor="contact-name"
                   className="text-sm text-muted-foreground mb-2 block"
                 >
-                  Name *
+                  పేరు *
                 </Label>
                 <Input
                   id="contact-name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Your full name"
+                  placeholder="మీ పూర్తి పేరు"
                   required
                   className="bg-navy-600/50 border-navy-500 focus:border-neon focus:ring-0 text-foreground placeholder:text-muted-foreground/50"
                   data-ocid="contact.input"
@@ -135,7 +135,7 @@ export function ContactSection() {
                   htmlFor="contact-email"
                   className="text-sm text-muted-foreground mb-2 block"
                 >
-                  Email *
+                  ఇమెయిల్ *
                 </Label>
                 <Input
                   id="contact-email"
@@ -153,13 +153,13 @@ export function ContactSection() {
                   htmlFor="contact-message"
                   className="text-sm text-muted-foreground mb-2 block"
                 >
-                  Message *
+                  సందేశం *
                 </Label>
                 <Textarea
                   id="contact-message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Tell us about your question or reading..."
+                  placeholder="మీ ప్రశ్న లేదా రీడింగ్ గురించి చెప్పండి..."
                   required
                   rows={5}
                   className="bg-navy-600/50 border-navy-500 focus:border-neon focus:ring-0 text-foreground placeholder:text-muted-foreground/50 resize-none"
@@ -172,8 +172,7 @@ export function ContactSection() {
                   className="bg-green-500/10 border border-green-500/30 text-green-400 rounded-lg px-4 py-3 text-sm"
                   data-ocid="contact.success_state"
                 >
-                  ✅ Message sent! The cosmos has received your query. We'll
-                  respond soon.
+                  ✅ సందేశం పంపబడింది! విశ్వం మీ ప్రశ్నను స్వీకరించింది. మేము త్వరలో స్పందిస్తాం.
                 </div>
               )}
               {status === "error" && (
@@ -181,7 +180,7 @@ export function ContactSection() {
                   className="bg-red-500/10 border border-red-500/30 text-red-400 rounded-lg px-4 py-3 text-sm"
                   data-ocid="contact.error_state"
                 >
-                  ❌ Something went wrong. Please try again.
+                  ❌ ఏదో తప్పు జరిగింది. దయచేసి మళ్ళీ ప్రయత్నించండి.
                 </div>
               )}
 
@@ -194,12 +193,12 @@ export function ContactSection() {
                 {status === "loading" ? (
                   <span className="flex items-center gap-2">
                     <span className="w-4 h-4 border-2 border-navy-900/50 border-t-navy-900 rounded-full animate-spin" />
-                    Sending...
+                    పంపుతున్నాం...
                   </span>
                 ) : (
                   <span className="flex items-center gap-2">
                     <Send className="w-4 h-4" />
-                    Send Message
+                    సందేశం పంపండి
                   </span>
                 )}
               </Button>

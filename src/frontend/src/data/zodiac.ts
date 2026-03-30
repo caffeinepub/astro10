@@ -17,220 +17,220 @@ export interface ZodiacSign {
 
 export const ZODIAC_SIGNS: ZodiacSign[] = [
   {
-    name: "Aries",
+    name: "మేషం",
     symbol: "♈",
     emoji: "🐏",
-    dateRange: "Mar 21 – Apr 19",
+    dateRange: "మార్చి 21 – ఏప్రిల్ 19",
     startMonth: 3,
     startDay: 21,
     endMonth: 4,
     endDay: 19,
-    element: "Fire",
+    element: "అగ్ని",
     color: "#ff6b6b",
     horoscope:
-      "Today the cosmos ignites your warrior spirit. Bold decisions bring remarkable breakthroughs. Trust your instincts and charge forward with confidence.",
-    love: "Venus aligns with your ruling Mars, creating electric romantic energy. A bold gesture captures someone special's attention. If committed, plan a spontaneous date night.",
+      "నేడు విశ్వం మీలోని యోధుని స్ఫూర్తిని రగిలిస్తుంది. ధైర్యమైన నిర్ణయాలు అద్భుతమైన ఫలితాలు తెస్తాయి. మీ అంతరాత్మను నమ్మి ముందుకు సాగండి.",
+    love: "శుక్రుడు మీ అధిపతి అయిన మంగళుడితో కలిసి విద్యుత్ వంటి రొమాంటిక్ శక్తిని సృష్టిస్తున్నాడు. ఒక ధైర్యమైన సంజ్ఞ ప్రత్యేక వ్యక్తి దృష్టిని ఆకర్షిస్తుంది. జంట అయితే, ఒక ఆకస్మిక డేట్ ప్లాన్ చేయండి.",
     career:
-      "Your natural leadership shines under current planetary transits. A project you've been pushing for finally gains momentum. Colleagues look to you for direction.",
-    life: "High energy propels you toward your goals today. Channel this fire productively. Physical exercise helps ground your restless spirit and sharpen your focus.",
+      "ప్రస్తుత గ్రహగతుల వల్ల మీ సహజ నాయకత్వం వెలుగులోకి వస్తుంది. మీరు ముందుకు తోస్తున్న ప్రాజెక్ట్ చివరకు ముందుకు కదులుతుంది. సహోద్యోగులు మీ నేతృత్వం కోసం చూస్తున్నారు.",
+    life: "అధిక శక్తి మిమ్మల్ని మీ లక్ష్యాల వైపు నడిపిస్తుంది. ఈ అగ్నిని ఉత్పాదకంగా మళ్ళించండి. శారీరక వ్యాయామం మీ మనస్సుకు స్థిరత్వం ఇస్తుంది.",
   },
   {
-    name: "Taurus",
+    name: "వృషభం",
     symbol: "♉",
     emoji: "🐂",
-    dateRange: "Apr 20 – May 20",
+    dateRange: "ఏప్రిల్ 20 – మే 20",
     startMonth: 4,
     startDay: 20,
     endMonth: 5,
     endDay: 20,
-    element: "Earth",
+    element: "భూమి",
     color: "#51cf66",
     horoscope:
-      "Venus, your ruler, blesses your endeavors with beauty and abundance. Material and emotional comforts align. A period of steady growth rewards your patience.",
-    love: "Your sensual nature draws admirers like moths to a flame. The stars encourage you to express your feelings openly. A slow-building connection deepens meaningfully.",
+      "మీ అధిపతి శుక్రుడు మీ కార్యాలన్నింటికీ సౌందర్యం మరియు సమృద్ధి ఇస్తున్నాడు. భౌతిక మరియు భావోద్వేగ సుఖాలు ఒకేసారి వస్తున్నాయి. స్థిరమైన పెరుగుదల మీ సహనాన్ని బహుమతిగా ఇస్తుంది.",
+    love: "మీ సంవేదనాత్మక స్వభావం అభిమానులను ఆకర్షిస్తుంది. నక్షత్రాలు మీ భావాలను బహిరంగంగా వ్యక్తం చేయమని ప్రోత్సహిస్తున్నాయి. నెమ్మదిగా పెరిగే అనుబంధం లోతుగా అభివృద్ధి చెందుతుంది.",
     career:
-      "Financial acumen is your superpower today. A business proposal or investment opportunity deserves careful consideration. Your steady approach yields long-term rewards.",
-    life: "Ground yourself in nature's rhythms for renewal. Your body craves nourishment — cook a beautiful meal, visit a garden. Slow down to absorb life's richness.",
+      "ఆర్థిక వివేకం నేడు మీ బలం. ఒక వ్యాపార ప్రతిపాదన లేదా పెట్టుబడి అవకాశం జాగ్రత్తగా పరిశీలించదగినది. మీ స్థిరమైన విధానం దీర్ఘకాలిక ఫలాలు ఇస్తుంది.",
+    life: "ప్రకృతి లయలలో మిమ్మల్ని మీరు పునరుద్ధరించుకోండి. మీ శరీరానికి పోషణ కావాలి — అందమైన భోజనం వండండి, తోటకు వెళ్ళండి. జీవితపు సమృద్ధిని అనుభవించండి.",
   },
   {
-    name: "Gemini",
+    name: "మిథునం",
     symbol: "♊",
     emoji: "👯",
-    dateRange: "May 21 – Jun 20",
+    dateRange: "మే 21 – జూన్ 20",
     startMonth: 5,
     startDay: 21,
     endMonth: 6,
     endDay: 20,
-    element: "Air",
+    element: "వాయువు",
     color: "#ffd43b",
     horoscope:
-      "Mercury's swift energy sharpens your wit and communication. Conversations spark new ideas and unexpected connections. Your adaptability is your greatest asset today.",
-    love: "Your charm is at peak brilliance — use it wisely. An intellectual connection blossoms into something deeper. Playful banter opens doors to genuine intimacy.",
+      "బుధుని చురుకైన శక్తి మీ తెలివి మరియు సంభాషణ నైపుణ్యాన్ని పదునుపెడుతుంది. సంభాషణలు కొత్త ఆలోచనలు మరియు అనుకోని అనుబంధాలను రగిలిస్తాయి. మీ అనుకూలత నేడు మీ అతిపెద్ద ఆస్తి.",
+    love: "మీ చమత్కారం గరిష్ట స్థాయిలో ఉంది — దానిని వివేకంగా ఉపయోగించండి. మేధో అనుబంధం లోతైనదిగా వికసిస్తుంది. ఆటపాటు మాటలు నిజమైన సన్నిహితత్వానికి తలుపులు తెరుస్తాయి.",
     career:
-      "Ideas flow like a river in full flood. Document every insight — your creativity is at a rare peak. A communication breakthrough transforms a stalled project.",
-    life: "Your mind races between possibilities. Choose two or three meaningful pursuits rather than scattering energy across twenty. Focus amplifies your innate brilliance.",
+      "ఆలోచనలు ఏరులా ప్రవహిస్తున్నాయి. ప్రతి అంతర్దృష్టిని నమోదు చేయండి — మీ సృజనాత్మకత అపూర్వమైన స్థాయిలో ఉంది. ఒక కమ్యూనికేషన్ పురోగతి నిలిచిపోయిన ప్రాజెక్ట్‌ను మార్చివేస్తుంది.",
+    life: "మీ మనస్సు అనేక అవకాశాల మధ్య పరిభ్రమిస్తుంది. ఇరవైకి బదులు రెండు లేదా మూడు అర్థవంతమైన పనులను ఎంచుకోండి. దృష్టి కేంద్రీకరణ మీ సహజ ప్రతిభను రెట్టింపు చేస్తుంది.",
   },
   {
-    name: "Cancer",
+    name: "కర్కాటకం",
     symbol: "♋",
     emoji: "🦀",
-    dateRange: "Jun 21 – Jul 22",
+    dateRange: "జూన్ 21 – జూలై 22",
     startMonth: 6,
     startDay: 21,
     endMonth: 7,
     endDay: 22,
-    element: "Water",
+    element: "జలం",
     color: "#74c0fc",
     horoscope:
-      "The Moon's tender light illuminates your emotional depths. Home and family take center stage. Your intuition is a compass pointing true north today.",
-    love: "Your nurturing soul creates a magnetic warmth that draws love to you. Open your heart without fear of vulnerability. The right person cherishes your emotional depth.",
+      "చంద్రుని సున్నితమైన వెలుగు మీ భావోద్వేగ లోతులను ప్రకాశింపజేస్తుంది. ఇల్లు మరియు కుటుంబం ముఖ్యమైన స్థానాన్ని తీసుకుంటున్నాయి. మీ అంతర్జ్ఞానం నేడు సత్యమైన దిక్సూచిలా పనిచేస్తుంది.",
+    love: "మీ పోషణ చేసే స్వభావం ప్రేమను ఆకర్షిస్తుంది. భయం లేకుండా మీ హృదయాన్ని తెరవండి. సరైన వ్యక్తి మీ భావోద్వేగ లోతును విలువైనదిగా భావిస్తాడు.",
     career:
-      "Your empathic leadership creates team harmony that multiplies productivity. Trust your gut about a colleague's true intentions. Creative projects flourish under your care.",
-    life: "Emotional tides run high — honor your feelings without being swept away. Create a sanctuary at home that restores your spirit. Ancestral wisdom offers surprising guidance.",
+      "మీ సానుభూతి నాయకత్వం బృంద సమన్వయాన్ని పెంచుతుంది. సహోద్యోగి నిజమైన ఉద్దేశాల గురించి మీ అంతర్జ్ఞానాన్ని నమ్మండి. సృజనాత్మక ప్రాజెక్టులు మీ సంరక్షణలో వికసిస్తాయి.",
+    life: "భావోద్వేగ అలలు బలంగా ఉన్నాయి — మిమ్మల్ని కొట్టుకుపోకుండా మీ భావాలను గౌరవించండి. మీ మనసుకు శాంతిని ఇచ్చే ఒక ఆశ్రయాన్ని ఇంట్లో సృష్టించండి.",
   },
   {
-    name: "Leo",
+    name: "సింహం",
     symbol: "♌",
     emoji: "🦁",
-    dateRange: "Jul 23 – Aug 22",
+    dateRange: "జూలై 23 – ఆగస్టు 22",
     startMonth: 7,
     startDay: 23,
     endMonth: 8,
     endDay: 22,
-    element: "Fire",
+    element: "అగ్ని",
     color: "#ff9f43",
     horoscope:
-      "The Sun, your sovereign ruler, radiates magnificent power through your sign. Your charisma is irresistible and your creative gifts demand expression. Claim your spotlight.",
-    love: "Romantic passion burns brilliantly in your heart. Grand gestures create unforgettable memories. Your generous love inspires the same devotion in return.",
+      "మీ అధిపతి సూర్యుడు మీ రాశి ద్వారా అద్భుతమైన శక్తిని వికిరణం చేస్తున్నాడు. మీ వ్యక్తిత్వం అప్రతిరోధ్యంగా ఉంది మరియు మీ సృజనాత్మక ప్రతిభ వ్యక్తీకరణను కోరుతుంది. మీ వేదికను చేజిక్కించుకోండి.",
+    love: "రొమాంటిక్ అభిలాష మీ హృదయంలో తీవ్రంగా మండుతుంది. గొప్ప సంజ్ఞలు మర్చిపోలేని జ్ఞాపకాలను సృష్టిస్తాయి. మీ ఉదారమైన ప్రేమ అదే భక్తిని ప్రేరేపిస్తుంది.",
     career:
-      "Leadership opportunities arrive with impeccable timing. Your vision inspires others to exceed their potential. A creative presentation wins over even the most skeptical audience.",
-    life: "Your vitality is electric — use it to pursue dreams you've postponed. Joy is not a luxury but your birthright. Let laughter and play restore your magnificent spirit.",
+      "నాయకత్వ అవకాశాలు సరైన సమయంలో వస్తున్నాయి. మీ దృష్టి ఇతరులను వారి సామర్థ్యాన్ని మించి పని చేయమని ప్రేరేపిస్తుంది. ఒక సృజనాత్మక ప్రెజెంటేషన్ అత్యంత సందేహస్పద ప్రేక్షకులనూ ఒప్పిస్తుంది.",
+    life: "మీ శక్తి విద్యుత్‌లా ఉంది — వాయిదా వేసిన కలలను వెంబడించడానికి దీన్ని ఉపయోగించండి. ఆనందం విలాసం కాదు, మీ జన్మహక్కు. నవ్వు మరియు ఆటలు మీ అద్భుతమైన ఆత్మను పునరుద్ధరిస్తాయి.",
   },
   {
-    name: "Virgo",
+    name: "కన్య",
     symbol: "♍",
     emoji: "🌾",
-    dateRange: "Aug 23 – Sep 22",
+    dateRange: "ఆగస్టు 23 – సెప్టెంబర్ 22",
     startMonth: 8,
     startDay: 23,
     endMonth: 9,
     endDay: 22,
-    element: "Earth",
+    element: "భూమి",
     color: "#a9e34b",
     horoscope:
-      "Mercury fine-tunes your analytical mind to extraordinary precision. Details others miss become your competitive advantage. Systematic effort creates flawless results.",
-    love: "Your devotion expresses through thoughtful acts of service. A partner notices the care you pour into small gestures. Articulate your deeper feelings — they deserve to be heard.",
+      "బుధుడు మీ విశ్లేషణాత్మక మనస్సును అసాధారణ నిర్దుష్టతకు సరిచేస్తున్నాడు. ఇతరులు మిస్ అయ్యే వివరాలు మీ పోటీ ప్రయోజనంగా మారతాయి. క్రమబద్ధమైన ప్రయత్నం నిర్దోషమైన ఫలితాలు ఇస్తుంది.",
+    love: "మీ అంకితభావం సేవలోని ఆలోచనాత్మక చర్యల ద్వారా వ్యక్తమవుతుంది. భాగస్వామి మీరు చిన్న సంజ్ఞలలో పెట్టే శ్రద్ధను గమనిస్తారు. మీ లోతైన భావాలను స్పష్టంగా చెప్పండి — అవి వినబడాల్సిన అర్హతను కలిగి ఉన్నాయి.",
     career:
-      "Your meticulous approach solves a complex problem that stumped others. Recognition comes from unexpected quarters. A health or wellness initiative at work gains traction.",
-    life: "Order in your environment creates clarity in your mind. Tackle that organizational project you've been postponing. Small daily rituals compound into extraordinary long-term results.",
+      "మీ జాగ్రత్తగల విధానం ఇతరులను ఇబ్బంది పెట్టిన సంక్లిష్టమైన సమస్యను పరిష్కరిస్తుంది. అనుకోని వైపు నుండి గుర్తింపు వస్తుంది. పని వద్ద ఆరోగ్య లేదా సంక్షేమ కార్యక్రమం వేగం పుంజుకుంటుంది.",
+    life: "మీ పరిసరాలలో క్రమం మీ మనస్సులో స్పష్టతను సృష్టిస్తుంది. వాయిదా వేసిన ఆ నిర్వహణ ప్రాజెక్ట్‌ను చేపట్టండి. చిన్న రోజువారీ అలవాట్లు అసాధారణ దీర్ఘకాలిక ఫలాలుగా మారతాయి.",
   },
   {
-    name: "Libra",
+    name: "తుల",
     symbol: "♎",
     emoji: "⚖️",
-    dateRange: "Sep 23 – Oct 22",
+    dateRange: "సెప్టెంబర్ 23 – అక్టోబర్ 22",
     startMonth: 9,
     startDay: 23,
     endMonth: 10,
     endDay: 22,
-    element: "Air",
+    element: "వాయువు",
     color: "#f8a5c2",
     horoscope:
-      "Venus harmonizes all your relationships with exquisite grace. Balance is restored where discord lingered. Your diplomatic gifts transform conflicts into cooperation.",
-    love: "Partnership energy surges powerfully. A soulmate connection deepens through honest conversation. Your natural charm creates harmony and attraction in equal measure.",
+      "శుక్రుడు మీ అన్ని సంబంధాలను అద్భుతమైన అనుగ్రహంతో సమరస పరుస్తున్నాడు. కలహం ఉన్నచోట సమతుల్యత పునరుద్ధరించబడుతుంది. మీ దౌత్య నైపుణ్యాలు సంఘర్షణలను సహకారంగా మారుస్తాయి.",
+    love: "భాగస్వామ్య శక్తి బలంగా పెరుగుతుంది. నిజాయితీగా మాట్లాడటం ద్వారా ఒక ఆత్మ అనుబంధం లోతవుతుంది. మీ సహజ చమత్కారం సమానంగా సమన్వయం మరియు ఆకర్షణను సృష్టిస్తుంది.",
     career:
-      "Collaboration yields breakthrough results today. Your ability to see multiple perspectives makes you the essential mediator. A long-standing professional dispute finds elegant resolution.",
-    life: "Beauty nourishes your soul — seek it actively in art, music, and nature. Creating aesthetic harmony in your space elevates your entire wellbeing and creative output.",
+      "సహకారం ఈరోజు అద్భుతమైన ఫలితాలను ఇస్తుంది. అనేక దృక్కోణాలను చూసే మీ సామర్థ్యం మిమ్మల్ని అవసరమైన మధ్యవర్తిగా చేస్తుంది. దీర్ఘకాలిక వృత్తిపర వివాదం సొగసైన పరిష్కారం పొందుతుంది.",
+    life: "సౌందర్యం మీ ఆత్మను పోషిస్తుంది — కళ, సంగీతం మరియు ప్రకృతిలో దాన్ని చురుకుగా వెతకండి. మీ స్థలంలో సౌందర్యపు సమన్వయాన్ని సృష్టించడం మీ మొత్తం సంక్షేమాన్ని పెంచుతుంది.",
   },
   {
-    name: "Scorpio",
+    name: "వృశ్చికం",
     symbol: "♏",
     emoji: "🦂",
-    dateRange: "Oct 23 – Nov 21",
+    dateRange: "అక్టోబర్ 23 – నవంబర్ 21",
     startMonth: 10,
     startDay: 23,
     endMonth: 11,
     endDay: 21,
-    element: "Water",
+    element: "జలం",
     color: "#cc5de8",
     horoscope:
-      "Pluto's transformative power works deep magic in your life. Hidden truths surface, bringing liberation rather than disruption. Your resilience carries you through profound change.",
-    love: "Intense emotional currents create magnetic attraction. A connection that reaches soul-deep levels transforms you both. Trust vulnerability — it is where true intimacy lives.",
+      "ప్లూటో యొక్క పరివర్తన శక్తి మీ జీవితంలో లోతైన మాయను పనిచేస్తుంది. దాచిన సత్యాలు వెలుగులోకి వచ్చి, అవ్యవస్థ బదులు విముక్తిని తీసుకొస్తాయి. మీ మనోస్థైర్యం మిమ్మల్ని లోతైన మార్పు గుండా తీసుకువెళ్తుంది.",
+    love: "తీవ్రమైన భావోద్వేగ ప్రవాహాలు అయస్కాంత ఆకర్షణను సృష్టిస్తాయి. ఆత్మ లోతుల్లో చేరే అనుబంధం మీరిద్దరినీ మారుస్తుంది. దుర్బలత్వాన్ని నమ్మండి — అక్కడే నిజమైన సన్నిహితత్వం ఉంటుంది.",
     career:
-      "Your investigative instincts uncover a crucial insight that changes everything. Research and deep analysis reveal opportunities hidden in plain sight. Power dynamics shift in your favor.",
-    life: "You are in a chrysalis phase — transformation feels uncomfortable but creates something magnificent. Release what no longer serves your evolution with gratitude and courage.",
+      "మీ పరిశోధనాత్మక ప్రవృత్తి ప్రతిదాన్నీ మార్చే కీలక అంతర్దృష్టిని కనుగొంటుంది. పరిశోధన మరియు లోతైన విశ్లేషణ సాదా దృష్టికి దాగి ఉన్న అవకాశాలను వెల్లడిస్తాయి. అధికార సమతుల్యత మీ అనుకూలంగా మారుతుంది.",
+    life: "మీరు గూడు దశలో ఉన్నారు — పరివర్తన అసౌకర్యంగా అనిపిస్తుంది కానీ అద్భుతమైన దాన్ని సృష్టిస్తుంది. మీ పరిణామానికి ఇకపై సేవ చేయనిదాన్ని కృతజ్ఞతతో వదిలివేయండి.",
   },
   {
-    name: "Sagittarius",
+    name: "ధనుస్సు",
     symbol: "♐",
     emoji: "🏹",
-    dateRange: "Nov 22 – Dec 21",
+    dateRange: "నవంబర్ 22 – డిసెంబర్ 21",
     startMonth: 11,
     startDay: 22,
     endMonth: 12,
     endDay: 21,
-    element: "Fire",
+    element: "అగ్ని",
     color: "#ff6348",
     horoscope:
-      "Jupiter expands every horizon before you. Adventure calls with irresistible urgency. Your philosophical mind grasps truths that elude more cautious souls. Aim higher.",
-    love: "Your magnetic optimism attracts romantic adventure. A connection from abroad or a meeting while traveling holds special significance. Freedom within partnership is your sacred need.",
+      "గురువు మీ ముందున్న ప్రతి క్షితిజాన్ని విస్తరిస్తున్నాడు. సాహసం అప్రతిరోధ్యమైన ఆత్రుతతో పిలుస్తుంది. మీ తాత్విక మనస్సు జాగ్రత్తగా ఉన్న ఆత్మలను తప్పించే సత్యాలను గ్రహిస్తుంది. ఇంకా ఉన్నతంగా లక్ష్యించండి.",
+    love: "మీ అయస్కాంత ఆశావాదం రొమాంటిక్ సాహసాన్ని ఆకర్షిస్తుంది. విదేశాల నుండి లేదా ప్రయాణంలో జరిగే భేటీకి ప్రత్యేక ప్రాముఖ్యత ఉంది. భాగస్వామ్యంలో స్వేచ్ఛ మీకు పవిత్రమైన అవసరం.",
     career:
-      "International opportunities or educational endeavors amplify your career trajectory. Your vision inspires a team to pursue an ambitious goal everyone believed impossible.",
-    life: "A journey — literal or philosophical — expands your understanding of what is possible. Books, travel, and diverse conversations are the fuel your spirit requires to thrive.",
+      "అంతర్జాతీయ అవకాశాలు లేదా విద్యాపరమైన ప్రయత్నాలు మీ కెరీర్ పథాన్ని మెరుగుపరుస్తాయి. అసాధ్యమని అందరూ నమ్మిన ఒక ఉన్నత లక్ష్యాన్ని వెంబడించమని మీ దృష్టి బృందాన్ని ప్రేరేపిస్తుంది.",
+    life: "అక్షరార్థంగా లేదా తాత్వికంగా ఒక యాత్ర సాధ్యమైనదేమిటో మీ అవగాహనను విస్తరిస్తుంది. పుస్తకాలు, ప్రయాణం మరియు వైవిధ్యభరితమైన సంభాషణలు మీ ఆత్మకు అవసరమైన ఇంధనం.",
   },
   {
-    name: "Capricorn",
+    name: "మకరం",
     symbol: "♑",
     emoji: "🐐",
-    dateRange: "Dec 22 – Jan 19",
+    dateRange: "డిసెంబర్ 22 – జనవరి 19",
     startMonth: 12,
     startDay: 22,
     endMonth: 1,
     endDay: 19,
-    element: "Earth",
+    element: "భూమి",
     color: "#868e96",
     horoscope:
-      "Saturn's disciplined energy rewards your patient, strategic approach. The mountain summit grows closer with each determined step. Authority figures recognize your exceptional reliability.",
-    love: "Your commitment creates a rock-solid foundation for lasting love. A relationship matures into a deeper partnership. Show your tender, vulnerable side — it strengthens your bond.",
+      "శని యొక్క క్రమశిక్షణతో కూడిన శక్తి మీ సహనమైన, వ్యూహాత్మక విధానాన్ని బహుమతిస్తుంది. పర్వత శిఖరం ప్రతి దృఢమైన అడుగుతో దగ్గరవుతుంది. అధికార వ్యక్తులు మీ అసాధారణ విశ్వసనీయతను గుర్తిస్తున్నారు.",
+    love: "మీ నిబద్ధత శాశ్వతమైన ప్రేమకు పటిష్ఠమైన పునాదిని సృష్టిస్తుంది. ఒక సంబంధం లోతైన భాగస్వామ్యంగా పరిణతి చెందుతుంది. మీ సున్నితమైన, దుర్బలమైన వైపు చూపించండి — ఇది మీ బంధాన్ని బలపరుస్తుంది.",
     career:
-      "Executive decisions made today shape your professional legacy. Your long-term strategic thinking outmaneuvers short-sighted competition. A promotion or advancement is within grasp.",
-    life: "Your disciplined mind is your greatest asset. Balance ambition with genuine rest — the body needs recovery as much as the career needs advancement. Celebrate small victories.",
+      "నేడు తీసుకున్న కార్యనిర్వాహక నిర్ణయాలు మీ వృత్తిగత వారసత్వాన్ని రూపొందిస్తాయి. మీ దీర్ఘకాలిక వ్యూహాత్మక ఆలోచన స్వల్పదృష్టి గల పోటీదారులను అధిగమిస్తుంది. పదోన్నతి లేదా పురోగతి అందుబాటులో ఉంది.",
+    life: "మీ క్రమశిక్షణాయుత మనస్సు మీ అతిపెద్ద ఆస్తి. మహత్వాకాంక్షను నిజమైన విశ్రాంతితో సమతుల్యం చేయండి — శరీరానికి కెరీర్‌కు పురోగతి అంత పునరుద్ధరణ అవసరం. చిన్న విజయాలను వేడుకోండి.",
   },
   {
-    name: "Aquarius",
+    name: "కుంభం",
     symbol: "♒",
     emoji: "🏺",
-    dateRange: "Jan 20 – Feb 18",
+    dateRange: "జనవరి 20 – ఫిబ్రవరి 18",
     startMonth: 1,
     startDay: 20,
     endMonth: 2,
     endDay: 18,
-    element: "Air",
+    element: "వాయువు",
     color: "#4dabf7",
     horoscope:
-      "Uranus sparks revolutionary ideas that could change your world. Your visionary perspective sees solutions where others see only problems. Innovation is your superpower today.",
-    love: "Unconventional romance suits your unique soul. A meeting of minds creates electric romantic chemistry. Authenticity is more attractive than any mask you might wear.",
+      "యురేనస్ మీ ప్రపంచాన్ని మార్చగల విప్లవాత్మక ఆలోచనలను రేకెత్తిస్తున్నాడు. మీ దూరదర్శి దృక్పథం ఇతరులు సమస్యలు మాత్రమే చూసే చోట పరిష్కారాలను చూస్తుంది. ఆవిష్కరణ నేడు మీ అతిపెద్ద శక్తి.",
+    love: "అసాధారణ రొమాన్స్ మీ విలక్షణమైన ఆత్మకు సరిపోతుంది. మనస్సుల సమ్మేళనం విద్యుత్ రొమాంటిక్ రసాయనశాస్త్రాన్ని సృష్టిస్తుంది. ప్రామాణికత మీరు ధరించే ఏ ముసుగు కంటే ఎక్కువ ఆకర్షణీయంగా ఉంటుంది.",
     career:
-      "Technology or humanitarian projects align with your deepest purpose. Your innovative approach to an old problem generates genuine excitement. A network connection opens unexpected doors.",
-    life: "Your highest self serves both individual growth and collective evolution. Community, causes, and cutting-edge ideas electrify your spirit. Embrace your beautiful eccentricity fully.",
+      "సాంకేతిక లేదా మానవతా ప్రాజెక్టులు మీ లోతైన ఉద్దేశ్యంతో సమానంగా ఉంటాయి. పాత సమస్యకు మీ ఆవిష్కరణాత్మక విధానం నిజమైన ఉత్తేజాన్ని కలిగిస్తుంది. నెట్‌వర్క్ అనుబంధం అనుకోని తలుపులు తెరుస్తుంది.",
+    life: "మీ అత్యున్నత స్వం వ్యక్తిగత వృద్ధి మరియు సామూహిక పరిణామం రెండింటినీ సేవిస్తుంది. సమాజం, కార్యాలు మరియు అత్యాధునిక ఆలోచనలు మీ ఆత్మను విద్యుద్వాహకం చేస్తాయి. మీ అందమైన వైచిత్రిని పూర్తిగా స్వీకరించండి.",
   },
   {
-    name: "Pisces",
+    name: "మీనం",
     symbol: "♓",
     emoji: "🐠",
-    dateRange: "Feb 19 – Mar 20",
+    dateRange: "ఫిబ్రవరి 19 – మార్చి 20",
     startMonth: 2,
     startDay: 19,
     endMonth: 3,
     endDay: 20,
-    element: "Water",
+    element: "జలం",
     color: "#63e6be",
     horoscope:
-      "Neptune weaves enchanting magic through your perceptions. Creative and spiritual gifts flow at peak expression. Dreams carry profound messages from your deepest wisdom.",
-    love: "Your boundless compassion creates a love that transcends the ordinary. A soulmate connection speaks without words. Trust your intuition about a romantic situation — it is unerringly accurate.",
+      "నెప్ట్యూన్ మీ అవగాహనల ద్వారా మంత్రముగ్ధమైన మాయను నేస్తున్నాడు. సృజనాత్మక మరియు ఆధ్యాత్మిక ప్రతిభలు గరిష్ట వ్యక్తీకరణలో ప్రవహిస్తున్నాయి. కలలు మీ లోతైన జ్ఞానం నుండి లోతైన సందేశాలు మోస్తాయి.",
+    love: "మీ అపరిమితమైన కరుణ సాధారణతను అధిగమించే ప్రేమను సృష్టిస్తుంది. ఒక ఆత్మ అనుబంధం మాటలు లేకుండా మాట్లాడుతుంది. ఒక రొమాంటిక్ పరిస్థితి గురించి మీ అంతర్జ్ఞానాన్ని నమ్మండి — అది ఖచ్చితంగా ఉంటుంది.",
     career:
-      "Creative, artistic, or healing work fulfills your soul's calling today. Your empathic insight makes you invaluable in collaborative settings. Trust an inspired vision even when it defies logic.",
-    life: "Your spiritual sensitivity is a gift, not a burden. Meditation, art, or time near water restores your luminous energy. Healthy boundaries protect your compassionate heart.",
+      "సృజనాత్మక, కళాత్మక, లేదా వైద్యపరమైన పని నేడు మీ ఆత్మ పిలుపును నెరవేరుస్తుంది. మీ సానుభూతి అంతర్దృష్టి సహయోగ వాతావరణంలో మిమ్మల్ని అమూల్యంగా చేస్తుంది. తర్కాన్ని అతిగమించినా ఒక ప్రేరేపిత దృష్టిని నమ్మండి.",
+    life: "మీ ఆధ్యాత్మిక సంవేదనశీలత ఒక బాధ కాదు, ఒక వరం. ధ్యానం, కళ, లేదా నీటి సమీపంలో సమయం మీ ప్రకాశవంతమైన శక్తిని పునరుద్ధరిస్తుంది. ఆరోగ్యకరమైన హద్దులు మీ కరుణతో కూడిన హృదయాన్ని రక్షిస్తాయి.",
   },
 ];
 
@@ -265,30 +265,30 @@ export function getAIResponse(zodiac: ZodiacSign, message: string): string {
   const responses: Record<string, string[]> = {
     love: [
       zodiac.love,
-      `The stars align favorably for ${zodiac.name} in matters of the heart. ${zodiac.element} energy amplifies your romantic magnetism.`,
-      `Venus whispers secrets meant only for ${zodiac.name} souls — your emotional authenticity is your greatest romantic gift.`,
+      `${zodiac.name} రాశికి హృదయ వ్యవహారాలలో నక్షత్రాలు అనుకూలంగా ఉన్నాయి. ${zodiac.element} శక్తి మీ రొమాంటిక్ అయస్కాంతత్వాన్ని పెంచుతుంది.`,
+      `శుక్రుడు ${zodiac.name} ఆత్మలకు మాత్రమే నిర్దేశించిన రహస్యాలు చెప్తున్నాడు — మీ భావోద్వేగ ప్రామాణికత మీ అతిపెద్ద రొమాంటిక్ వరం.`,
     ],
     career: [
       zodiac.career,
-      `${zodiac.name}'s planetary alignment strongly supports professional advancement. Your ${zodiac.element} nature brings unique gifts to any workplace.`,
-      `The cosmos signals breakthrough potential in your career. Your ${zodiac.name} perseverance will be rewarded significantly.`,
+      `${zodiac.name} యొక్క గ్రహగతి వృత్తిగత పురోగతిని బలంగా సూచిస్తుంది. మీ ${zodiac.element} స్వభావం ఏ కార్యాలయానికైనా ప్రత్యేకమైన వరాలు తీసుకొస్తుంది.`,
+      `విశ్వం మీ కెరీర్‌లో పురోగతి సంకేతం ఇస్తుంది. మీ ${zodiac.name} పట్టుదల గణనీయంగా బహుమతి పొందుతుంది.`,
     ],
     money: [
-      `Financial currents flow favorably for ${zodiac.name} this period. ${zodiac.element} energy grounds your material instincts.`,
-      `A wise investment or unexpected income opportunity surfaces. Your ${zodiac.name} intuition guides sound financial decisions.`,
+      `ఈ కాలంలో ${zodiac.name} రాశికి ఆర్థిక ప్రవాహాలు అనుకూలంగా ఉన్నాయి. ${zodiac.element} శక్తి మీ భౌతిక ప్రవృత్తులను స్థిరపరుస్తుంది.`,
+      `తెలివైన పెట్టుబడి లేదా ఆకస్మిక ఆదాయ అవకాశం వస్తుంది. మీ ${zodiac.name} అంతర్జ్ఞానం మంచి ఆర్థిక నిర్ణయాలకు మార్గం చూపిస్తుంది.`,
     ],
     health: [
-      `Your ${zodiac.element} constitution requires specific attention now. Honor your body's signals and prioritize restorative practices.`,
-      `${zodiac.name} energy encourages a holistic approach to wellness. Mind, body, and spirit alignment unlocks remarkable vitality.`,
+      `మీ ${zodiac.element} శరీర నిర్మాణానికి ఇప్పుడు నిర్దిష్ట శ్రద్ధ అవసరం. మీ శరీర సంకేతాలను గౌరవించి పునరుద్ధరించే పద్ధతులకు ప్రాధాన్యత ఇవ్వండి.`,
+      `${zodiac.name} శక్తి ఆరోగ్యానికి సమగ్ర విధానాన్ని ప్రోత్సహిస్తుంది. మనస్సు, శరీరం మరియు ఆత్మ సమరసత అసాధారణమైన జీవశక్తిని అనుమతిస్తుంది.`,
     ],
     future: [
       zodiac.life,
-      `The next three months bring significant shifts aligned with ${zodiac.name}'s evolutionary journey. Embrace change with the confidence of ${zodiac.element}.`,
+      `తరువాతి మూడు నెలలు ${zodiac.name} యొక్క పరిణామ ప్రయాణంతో ముఖ్యమైన మార్పులు తీసుకొస్తాయి. ${zodiac.element} యొక్క నమ్మకంతో మార్పును స్వీకరించండి.`,
     ],
     general: [
       zodiac.horoscope,
-      `As a ${zodiac.name} (${zodiac.symbol}), your ${zodiac.element} nature positions you perfectly for what the cosmos has prepared. The stars see your true potential.`,
-      `${zodiac.name} energy is strong today. Your ruling energy guides you toward authentic expression and meaningful connection.`,
+      `${zodiac.name} (${zodiac.symbol}) గా, మీ ${zodiac.element} స్వభావం విశ్వం సిద్ధం చేసిన దాని కోసం మిమ్మల్ని సరిగ్గా స్థానంలో ఉంచుతుంది. నక్షత్రాలు మీ నిజమైన సామర్థ్యాన్ని చూస్తున్నాయి.`,
+      `నేడు ${zodiac.name} శక్తి బలంగా ఉంది. మీ అధిపతి శక్తి మిమ్మల్ని ప్రామాణిక వ్యక్తీకరణ మరియు అర్థవంతమైన అనుబంధం వైపు నడిపిస్తుంది.`,
     ],
   };
 
@@ -299,7 +299,10 @@ export function getAIResponse(zodiac: ZodiacSign, message: string): string {
     msg.includes("partner") ||
     msg.includes("romance") ||
     msg.includes("marriage") ||
-    msg.includes("soulmate")
+    msg.includes("soulmate") ||
+    msg.includes("ప్రేమ") ||
+    msg.includes("వివాహ") ||
+    msg.includes("జంట")
   )
     category = "love";
   else if (
@@ -308,7 +311,10 @@ export function getAIResponse(zodiac: ZodiacSign, message: string): string {
     msg.includes("work") ||
     msg.includes("business") ||
     msg.includes("promotion") ||
-    msg.includes("boss")
+    msg.includes("boss") ||
+    msg.includes("ఉద్యోగ") ||
+    msg.includes("వ్యాపార") ||
+    msg.includes("కెరీర్")
   )
     category = "career";
   else if (
@@ -316,7 +322,10 @@ export function getAIResponse(zodiac: ZodiacSign, message: string): string {
     msg.includes("finance") ||
     msg.includes("wealth") ||
     msg.includes("investment") ||
-    msg.includes("salary")
+    msg.includes("salary") ||
+    msg.includes("డబ్బు") ||
+    msg.includes("ఆర్థిక") ||
+    msg.includes("సంపద")
   )
     category = "money";
   else if (
@@ -324,7 +333,9 @@ export function getAIResponse(zodiac: ZodiacSign, message: string): string {
     msg.includes("body") ||
     msg.includes("wellness") ||
     msg.includes("fitness") ||
-    msg.includes("sick")
+    msg.includes("sick") ||
+    msg.includes("ఆరోగ్య") ||
+    msg.includes("శరీర")
   )
     category = "health";
   else if (
@@ -333,7 +344,10 @@ export function getAIResponse(zodiac: ZodiacSign, message: string): string {
     msg.includes("destiny") ||
     msg.includes("fate") ||
     msg.includes("year") ||
-    msg.includes("month")
+    msg.includes("month") ||
+    msg.includes("భవిష్యత్") ||
+    msg.includes("జోస్యం") ||
+    msg.includes("నెల")
   )
     category = "future";
 

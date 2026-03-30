@@ -23,22 +23,21 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
-              AI-powered Vedic astrology readings at just ₹10. Unlock your
-              cosmic destiny with personalized insights for love, career, and
-              life.
+              AI-ఆధారిత వేద జ్యోతిష్య రీడింగ్‌లు ₹100కే. ప్రేమ, వృత్తి మరియు జీవితంపై వ్యక్తిగతీకరించిన
+              అంతర్దృష్టులతో మీ విశ్వ విధిని తెలుసుకోండి.
             </p>
           </div>
 
           <div>
             <h4 className="text-sm font-semibold text-foreground mb-4">
-              Quick Links
+              త్వరిత లింకులు
             </h4>
             <ul className="space-y-2">
               {[
-                { label: "Daily Horoscope", id: "#horoscope" },
-                { label: "AI Reading", id: "#chat" },
-                { label: "Predictions", id: "#predictions" },
-                { label: "Pricing", id: "#pricing" },
+                { label: "రోజువారీ రాశిఫలం", id: "#horoscope" },
+                { label: "AI రీడింగ్", id: "#chat" },
+                { label: "అంచనాలు", id: "#predictions" },
+                { label: "ధర", id: "#pricing" },
               ].map((link) => (
                 <li key={link.id}>
                   <button
@@ -55,11 +54,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Info</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-4">
+              సమాచారం
+            </h4>
             <ul className="space-y-2">
               {[
-                { label: "About Astro10", id: "#about" },
-                { label: "Contact", id: "#contact" },
+                { label: "Astro10 గురించి", id: "#about" },
+                { label: "సంప్రదించండి", id: "#contact" },
               ].map((link) => (
                 <li key={link.id}>
                   <button
@@ -78,7 +79,7 @@ export function Footer() {
 
         <div className="border-t border-navy-500/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-muted-foreground">
-            © {year} Astro10. All rights reserved. For entertainment purposes.
+            © {year} Astro10. అన్ని హక్కులు పరిరక్షించబడ్డాయి. వినోద ప్రయోజనాల కోసం.
           </p>
           <p className="text-xs text-muted-foreground">
             Built with ♥ using{" "}

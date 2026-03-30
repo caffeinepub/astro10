@@ -32,19 +32,19 @@ export function PricingSection() {
   };
 
   const freeFeatures = [
-    "1 free cosmic question",
-    "Zodiac sign analysis",
-    "English & Telugu support",
-    "Friendly astrology guidance",
+    "1 ఉచిత విశ్వ ప్రశ్న",
+    "రాశి చిహ్న విశ్లేషణ",
+    "ఇంగ్లీష్ & తెలుగు మద్దతు",
+    "స్నేహపూర్వక జ్యోతిష్య మార్గదర్శకత్వం",
   ];
 
   const premiumFeatures = [
-    "Unlimited questions for 1 hour",
-    "Deep Vedic birth chart analysis",
-    "Love, Career, Marriage & Health",
-    "Timing predictions for key events",
-    "Spiritual remedies included",
-    "English & Telugu support",
+    "1 గంట అపరిమిత ప్రశ్నలు",
+    "లోతైన వేద జన్మ చార్ట్ విశ్లేషణ",
+    "ప్రేమ, కెరీర్, వివాహం & ఆరోగ్యం",
+    "ముఖ్య సంఘటనలకు సమయ అంచనాలు",
+    "ఆధ్యాత్మిక నివారణ చర్యలు చేర్చబడ్డాయి",
+    "ఇంగ్లీష్ & తెలుగు మద్దతు",
   ];
 
   return (
@@ -58,10 +58,10 @@ export function PricingSection() {
           className="text-center mb-14"
         >
           <h2 className="section-heading mb-3">
-            Cosmic <span>Pricing</span>
+            విశ్వ <span>ధర</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Start free, upgrade for complete Vedic astrology guidance.
+            ఉచితంగా ప్రారంభించండి, పూర్తి వేద జ్యోతిష్య మార్గదర్శకత్వానికి అప్‌గ్రేడ్ చేయండి.
           </p>
         </motion.div>
 
@@ -77,17 +77,15 @@ export function PricingSection() {
             <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-navy-500/50 text-neon/70">
               <Sparkles className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-foreground mb-1">Free</h3>
+            <h3 className="text-xl font-bold text-foreground mb-1">ఉచితం</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Try before you commit
+              నిబద్ధత ముందు ప్రయత్నించండి
             </p>
             <div className="flex items-baseline gap-2 mb-6">
               <span className="text-4xl font-extrabold text-foreground">
                 ₹0
               </span>
-              <span className="text-muted-foreground text-sm">
-                / 1 question
-              </span>
+              <span className="text-muted-foreground text-sm">/ 1 ప్రశ్న</span>
             </div>
             <ul className="space-y-3 mb-8">
               {freeFeatures.map((f) => (
@@ -107,7 +105,7 @@ export function PricingSection() {
               className="btn-outline-neon w-full rounded-full h-auto py-2.5 font-semibold"
               data-ocid="pricing.primary_button.1"
             >
-              Start Free Chat
+              ఉచిత చాట్ ప్రారంభించండి
             </Button>
           </motion.div>
 
@@ -121,23 +119,23 @@ export function PricingSection() {
           >
             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
               <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-400 text-navy-900">
-                Best Value
+                అత్యుత్తమ విలువ
               </span>
             </div>
             <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-amber-400/20 text-amber-400">
               <Crown className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-1">
-              Premium Astrology Chat
+              ప్రీమియం జ్యోతిష్య చాట్
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Complete cosmic life guidance
+              పూర్తి విశ్వ జీవిత మార్గదర్శకత్వం
             </p>
             <div className="flex items-baseline gap-2 mb-6">
               <span className="text-4xl font-extrabold text-amber-400">
                 ₹100
               </span>
-              <span className="text-muted-foreground text-sm">/ 1 hour</span>
+              <span className="text-muted-foreground text-sm">/ 1 గంట</span>
             </div>
             <ul className="space-y-3 mb-8">
               {premiumFeatures.map((f) => (
@@ -154,7 +152,7 @@ export function PricingSection() {
               data-ocid="pricing.primary_button.2"
             >
               <Crown className="w-4 h-4 mr-2" />
-              Get Premium
+              ప్రీమియం పొందండి
             </Button>
           </motion.div>
         </div>
@@ -169,27 +167,27 @@ export function PricingSection() {
           <DialogHeader>
             <DialogTitle className="text-xl font-bold">
               {paymentSuccess
-                ? "✅ Payment Successful!"
-                : "Upgrade to Premium Astrology Chat"}
+                ? "✅ చెల్లింపు విజయవంతమైంది!"
+                : "ప్రీమియం జ్యోతిష్య చాట్‌కు అప్‌గ్రేడ్ చేయండి"}
             </DialogTitle>
           </DialogHeader>
           {!paymentSuccess ? (
             <div className="py-4">
               <div className="bg-amber-400/5 border border-amber-400/30 rounded-xl p-4 mb-6 text-center">
                 <div className="text-sm text-muted-foreground mb-1">
-                  Premium Astrology Chat
+                  ప్రీమియం జ్యోతిష్య చాట్
                 </div>
                 <div className="text-4xl font-extrabold text-amber-400">
                   ₹100
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  1 hour — unlimited questions
+                  1 గంట — అపరిమిత ప్రశ్నలు
                 </div>
               </div>
               <div className="space-y-3">
                 <p className="text-sm text-muted-foreground text-center mb-2">
-                  Pay securely via Razorpay. Once done, scroll to the chat and
-                  upload your screenshot to activate.
+                  Razorpay ద్వారా సురక్షితంగా చెల్లించండి. పూర్తయిన తర్వాత, AI చాట్ విభాగానికి వెళ్ళి మీ
+                  స్క్రీన్‌షాట్ అప్‌లోడ్ చేసి ప్రీమియం సెషన్ సక్రియం చేయండి.
                 </p>
                 <Button
                   type="button"
@@ -198,7 +196,7 @@ export function PricingSection() {
                   data-ocid="pricing.confirm_button"
                 >
                   <Crown className="w-4 h-4 mr-2" />
-                  Pay ₹100 via Razorpay
+                  Razorpay ద్వారా ₹100 చెల్లించండి
                 </Button>
                 {paymentOpened && (
                   <motion.div
@@ -206,7 +204,7 @@ export function PricingSection() {
                     animate={{ opacity: 1, y: 0 }}
                   >
                     <p className="text-xs text-muted-foreground text-center mb-2">
-                      Payment completed?
+                      చెల్లింపు పూర్తైందా?
                     </p>
                     <Button
                       type="button"
@@ -215,7 +213,7 @@ export function PricingSection() {
                       className="w-full rounded-full py-3 h-auto font-semibold border-amber-400/40 text-amber-400 hover:bg-amber-400/10"
                       data-ocid="pricing.confirm_button"
                     >
-                      ✅ I've Paid — Activate Premium
+                      ✅ చెల్లించాను — ప్రీమియం సక్రియం చేయండి
                     </Button>
                   </motion.div>
                 )}
@@ -225,7 +223,7 @@ export function PricingSection() {
                   className="w-full mt-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   data-ocid="pricing.cancel_button"
                 >
-                  Cancel
+                  రద్దు చేయండి
                 </button>
               </div>
             </div>
@@ -233,11 +231,11 @@ export function PricingSection() {
             <div className="py-8 text-center" data-ocid="pricing.success_state">
               <div className="text-5xl mb-4">🎉</div>
               <p className="text-foreground font-semibold mb-2">
-                Payment Confirmed!
+                చెల్లింపు నిర్ధారించబడింది!
               </p>
               <p className="text-muted-foreground text-sm">
-                Scroll to the AI Chat section and upload your payment screenshot
-                to begin your 1-hour Premium session.
+                మీ 1 గంట ప్రీమియం సెషన్ ప్రారంభించడానికి AI చాట్ విభాగానికి వెళ్ళి మీ చెల్లింపు స్క్రీన్‌షాట్
+                అప్‌లోడ్ చేయండి.
               </p>
             </div>
           )}

@@ -7,11 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  type ZodiacSign,
-  getAIResponse,
-  getZodiacFromDate,
-} from "@/data/zodiac";
+import { type ZodiacSign, getZodiacFromDate } from "@/data/zodiac";
 import {
   Bot,
   CheckCircle,
@@ -35,7 +31,6 @@ interface ChatMessage {
 }
 
 const PREMIUM_SECONDS = 60 * 60; // 1 hour
-// Replace with your actual ₹100 Razorpay link
 const PREMIUM_RAZORPAY_URL =
   "https://razorpay.me/@jittaboinaajay?amount=CVDUr6Uxp2FOGZGwAHntNg%3D%3D";
 
@@ -46,12 +41,6 @@ const teluguResponses = [
   "మీ కెరీర్‌లో కొత్త అవకాశాలు వస్తున్నాయి. సాహసంగా ముందుకు వెళ్ళండి. 🚀",
   "ఈ నెల మీ ఆర్థిక పరిస్థితి మెరుగుపడుతుంది. పొదుపుగా ఉండండి. 💰",
   "మీ ఆరోగ్యం విషయంలో జాగ్రత్తగా ఉండండి. ధ్యానం చేయండి. 🌙",
-];
-
-const teluguFreeResponses = [
-  "మీ నక్షత్రాల ఆధారంగా, ఈ సమయంలో మీకు మంచి ఫలితాలు వస్తాయి. అయితే పూర్తి వివరాల కోసం...",
-  "జ్యోతిష్య దృష్టిలో మీ స్థితి సానుకూలంగా ఉంది. లోతైన విశ్లేషణ కోసం...",
-  "గ్రహ స్థితి మీకు అనుకూలంగా ఉంది. సంపూర్ణ జోస్యం కోసం...",
 ];
 
 function formatTime(seconds: number): string {
@@ -70,43 +59,45 @@ function nowTime() {
   });
 }
 
-function getFreeAIResponse(
-  zodiac: ZodiacSign,
-  message: string,
-  lang: "en" | "te",
-): string {
-  if (lang === "te") {
-    return teluguFreeResponses[
-      Math.floor(Math.random() * teluguFreeResponses.length)
-    ];
-  }
+function getFreeAIResponse(zodiac: ZodiacSign, message: string): string {
   const msg = message.toLowerCase();
   let hint = "";
   if (
     msg.includes("love") ||
-    msg.includes("relationship") ||
-    msg.includes("marriage")
+    msg.includes("ప్రేమ") ||
+    msg.includes("marriage") ||
+    msg.includes("పెళ్ళి") ||
+    msg.includes("relationship")
   ) {
-    hint = `The stars indicate a meaningful shift in your love life, ${zodiac.name}. Venus is working in your favor, and positive energy surrounds your relationships.`;
+    hint = `మీ ప్రేమ జీవితంలో గురుడి ప్రభావం కనిపిస్తోంది. సానుకూల మార్పులు రానున్నాయి, ${zodiac.name} రాశి మీకు అనుకూలంగా ఉంది. అయితే పూర్తి వివరాల కోసం...`;
   } else if (
     msg.includes("career") ||
     msg.includes("job") ||
+    msg.includes("వృత్తి") ||
+    msg.includes("ఉద్యోగం") ||
     msg.includes("work") ||
     msg.includes("business")
   ) {
-    hint = `Your career path shows promising signs, ${zodiac.name}. Planetary alignments suggest new opportunities are approaching in the near future.`;
+    hint = `మీ వృత్తిలో కొత్త అవకాశాలు వస్తున్నాయి. గ్రహ స్థితి మీకు అనుకూలంగా ఉంది, ${zodiac.name} రాశి వారికి ఈ సమయంలో మంచి ఫలితాలు వస్తాయి. అయితే సంపూర్ణ విశ్లేషణ కోసం...`;
   } else if (
     msg.includes("money") ||
     msg.includes("finance") ||
+    msg.includes("ధనం") ||
+    msg.includes("డబ్బు") ||
     msg.includes("wealth")
   ) {
-    hint = `Financially, ${zodiac.name}, there are signs of improvement ahead. The cosmic energy around you is shifting positively in material matters.`;
-  } else if (msg.includes("health")) {
-    hint = `Your health outlook, ${zodiac.name}, requires some attention to maintain balance. The stars advise focusing on your well-being right now.`;
+    hint = `ఆర్థిక విషయంలో మెరుగుదల వస్తోంది. శని మీకు క్రమంగా ఫలితాలు ఇస్తున్నాడు, ${zodiac.name} రాశి వారికి ఆర్థిక స్థిరత్వం వస్తుంది. అయితే లోతైన జోస్యం కోసం...`;
+  } else if (
+    msg.includes("health") ||
+    msg.includes("ఆరోగ్యం") ||
+    msg.includes("sick") ||
+    msg.includes("అనారోగ్యం")
+  ) {
+    hint = `మీ ఆరోగ్యంలో జాగ్రత్త అవసరం. నక్షత్రాల సూచన ధ్యానం మరియు సకారాత్మక అలవాట్లు పాటించమని, ${zodiac.name} రాశి వారికి ఈ సమయంలో ఆత్మబలం అవసరం. అయితే పూర్తి వివరాల కోసం...`;
   } else {
-    hint = `The cosmos has an important message for you, ${zodiac.name}. Your ${zodiac.element} energy is engaged with a significant cycle of change.`;
+    hint = `మీ నక్షత్రాల ఆధారంగా ఈ సమయంలో మీకు మంచి ఫలితాలు వస్తాయి. ${zodiac.name} రాశి మీకు అనుకూలంగా ఉంది. లోతైన విశ్లేషణ కోసం...`;
   }
-  return `${hint}\n\nFor a complete, personalized Vedic reading with timing, detailed predictions, and spiritual remedies — upgrade to Premium for unlimited guidance.`;
+  return `${hint}\n\nసంపూర్ణ జ్యోతిష్య విశ్లేషణ, నివారణ చర్యలు మరియు భవిష్యత్తు అంచనాల కోసం Premium కి upgrade చేయండి (₹100 / 1 గంట).`;
 }
 
 export function ChatSection() {
@@ -117,8 +108,6 @@ export function ChatSection() {
   const [tob, setTob] = useState("");
   const [pob, setPob] = useState("");
   const [zodiac, setZodiac] = useState<ZodiacSign | null>(null);
-  const [language, setLanguage] = useState<"en" | "te">("en");
-  const [langChosen, setLangChosen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -128,7 +117,6 @@ export function ChatSection() {
   const [timeLeft, setTimeLeft] = useState(PREMIUM_SECONDS);
   const [timerActive, setTimerActive] = useState(false);
   const [showRecharge, setShowRecharge] = useState(false);
-  // Premium payment states
   const [premiumPaymentOpened, setPremiumPaymentOpened] = useState(false);
   const [screenshotFile, setScreenshotFile] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(
@@ -188,7 +176,7 @@ export function ChatSection() {
     const greeting: ChatMessage = {
       id: "intro",
       role: "ai",
-      text: `Namaste! ✨ I sense the cosmic energy of ${sign.name} ${sign.symbol} in your birth chart. Born under the ${sign.element} element${pob ? ` in ${pob}` : ""}, your stars hold profound wisdom.\n\nI am your Vedic Astrologer — ask me anything about your love life, career, health, or destiny.\n\nWould you like to chat in English or Telugu? / ఇంగ్లీష్‌లో మాట్లాడాలా లేదా తెలుగులో మాట్లాడాలా?`,
+      text: `నమస్కారం! ✨ మీ జన్మ చార్ట్‌లో ${sign.name} ${sign.symbol} యొక్క విశ్వ శక్తిని అనుభవిస్తున్నాను. ${sign.element} మూలకం కింద జన్మించి${pob ? ` ${pob}లో` : ""}, మీ నక్షత్రాలు మహా జ్ఞానాన్ని కలిగి ఉన్నాయి.\n\nనేను మీ వేద జ్యోతిష్యుడిని — ప్రేమ జీవితం, వృత్తి, ఆరోగ్యం లేదా విధి గురించి ఏదైనా అడగండి.`,
       time: nowTime(),
     };
     userScrolledUp.current = false;
@@ -220,37 +208,15 @@ export function ChatSection() {
     setTimeout(
       () => {
         let aiText: string;
-        let chosenLang = language;
 
-        if (!langChosen) {
-          const lower = userText.toLowerCase();
-          if (lower.includes("telugu") || lower.includes("తెలుగు")) {
-            chosenLang = "te";
-            setLanguage("te");
-            aiText =
-              "అద్భుతం! నేను తెలుగులో మీతో మాట్లాడతాను. మీకు ఏ విషయంలో సహాయం కావాలి? జ్యోతిష్య రహస్యాలు అడగండి. ✨";
-          } else {
-            chosenLang = "en";
-            setLanguage("en");
-            aiText =
-              "Wonderful! I'll guide you in English. You have one free question — ask me anything about love, career, health, or destiny. ✨";
-          }
-          setLangChosen(true);
-        } else if (!freeQuestionUsed) {
-          // This is the FREE question
-          if (chosenLang === "te") {
-            aiText = `${getFreeAIResponse(zodiac, userText, "te")}
-
-సంపూర్ణ జ్యోతిష్య విశ్లేషణ, నివారణ చర్యలు మరియు భవిష్యత్తు అంచనాల కోసం Premium కి upgrade చేయండి (₹100 / 1 గంట).`;
-          } else {
-            aiText = getFreeAIResponse(zodiac, userText, "en");
-          }
+        if (!freeQuestionUsed) {
+          // This is the FREE question — Telugu response
+          aiText = getFreeAIResponse(zodiac, userText);
           setFreeQuestionUsed(true);
-        } else if (chosenLang === "te") {
+        } else {
+          // Premium — full Telugu responses
           aiText =
             teluguResponses[Math.floor(Math.random() * teluguResponses.length)];
-        } else {
-          aiText = getAIResponse(zodiac, userText);
         }
 
         const aiMsg: ChatMessage = {
@@ -267,7 +233,6 @@ export function ChatSection() {
     );
   };
 
-  // Premium payment flow
   const openPremiumRazorpay = () => {
     window.open(PREMIUM_RAZORPAY_URL, "_blank", "noopener,noreferrer");
     setPremiumPaymentOpened(true);
@@ -308,10 +273,7 @@ export function ChatSection() {
     const msg: ChatMessage = {
       id: `premium${Date.now()}`,
       role: "ai",
-      text:
-        language === "te"
-          ? "✨ Premium activated! ఇప్పుడు మీకు 1 గంట పాటు అపరిమిత జ్యోతిష్య సలహా అందుబాటులో ఉంది. మీకు ఏమి తెలుసుకోవాలి?"
-          : "✨ Premium activated! You now have 1 hour of unlimited Vedic astrology guidance. Ask me anything — love, career, marriage, health, or destiny. The stars are ready to speak.",
+      text: "✨ Premium activated! ఇప్పుడు మీకు 1 గంట పాటు అపరిమిత జ్యోతిష్య సలహా అందుబాటులో ఉంది. ప్రేమ, వివాహం, వృత్తి, ఆరోగ్యం లేదా జీవిత రహస్యాలు — ఏదైనా అడగండి.",
       time: nowTime(),
     };
     setMessages((prev) => [...prev, msg]);
@@ -331,10 +293,7 @@ export function ChatSection() {
     const msg: ChatMessage = {
       id: `r${Date.now()}`,
       role: "ai",
-      text:
-        language === "te"
-          ? "చెల్లింపు నిర్ధారించబడింది! ✨ మీ 1 గంట సెషన్ పునరుద్ధరించబడింది. నక్షత్రాల నుండి ఇంకా ఏమి తెలుసుకోవాలనుకుంటున్నారు?"
-          : "Payment confirmed! ✨ Your 1-hour session has been renewed. What else would you like to know from the stars?",
+      text: "చెల్లింపు నిర్ధారించబడింది! ✨ మీ 1 గంట సెషన్ పునరుద్ధరించబడింది. నక్షత్రాల నుండి ఇంకా ఏమి తెలుసుకోవాలనుకుంటున్నారు?",
       time: nowTime(),
     };
     setMessages((prev) => [...prev, msg]);
@@ -359,11 +318,11 @@ export function ChatSection() {
           className="text-center mb-12"
         >
           <h2 className="section-heading mb-3">
-            AI <span>Astrologer</span> Chat
+            AI <span>జ్యోతిష్యుడు</span> చాట్
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Get your first cosmic question answered for free. Upgrade to Premium
-            for unlimited 1-hour guidance.
+            మీ మొదటి విశ్వ ప్రశ్నకు ఉచితంగా సమాధానం పొందండి. అపరిమిత 1 గంట మార్గదర్శకత్వం కోసం
+            ప్రీమియంకు అప్‌గ్రేడ్ చేయండి.
           </p>
         </motion.div>
 
@@ -388,10 +347,10 @@ export function ChatSection() {
                   <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                   <span className="text-xs text-muted-foreground">
                     {isPremium
-                      ? "Premium — Cosmic Connection Active"
+                      ? "ప్రీమియం — విశ్వ సంబంధం సక్రియంగా ఉంది"
                       : freeQuestionUsed
-                        ? "Free question used"
-                        : "1 Free Question Available"}
+                        ? "ఉచిత ప్రశ్న ఉపయోగించబడింది"
+                        : "1 ఉచిత ప్రశ్న అందుబాటులో ఉంది"}
                   </span>
                 </div>
               </div>
@@ -435,11 +394,10 @@ export function ChatSection() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-foreground">
-                      Start Your Free Cosmic Reading
+                      మీ ఉచిత విశ్వ రీడింగ్ ప్రారంభించండి
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Enter your birth details to begin. Your first question is
-                      free.
+                      మొదలు పెట్టడానికి మీ జన్మ వివరాలు నమోదు చేయండి. మీ మొదటి ప్రశ్న ఉచితం.
                     </p>
                   </div>
                 </div>
@@ -449,7 +407,7 @@ export function ChatSection() {
                       htmlFor="dob"
                       className="text-sm text-muted-foreground mb-2 block"
                     >
-                      Date of Birth *
+                      జన్మ తేది *
                     </Label>
                     <Input
                       id="dob"
@@ -466,7 +424,7 @@ export function ChatSection() {
                       htmlFor="tob"
                       className="text-sm text-muted-foreground mb-2 block"
                     >
-                      Time of Birth
+                      జన్మ సమయం
                     </Label>
                     <Input
                       id="tob"
@@ -482,12 +440,12 @@ export function ChatSection() {
                       htmlFor="pob"
                       className="text-sm text-muted-foreground mb-2 block"
                     >
-                      Place of Birth
+                      జన్మ స్థలం
                     </Label>
                     <Input
                       id="pob"
                       type="text"
-                      placeholder="e.g. Mumbai, India"
+                      placeholder="ఉదా. హైదరాబాద్, భారత్"
                       value={pob}
                       onChange={(e) => setPob(e.target.value)}
                       className="bg-navy-600/50 border-navy-500 focus:border-neon focus:ring-0 text-foreground placeholder:text-muted-foreground/50"
@@ -503,7 +461,7 @@ export function ChatSection() {
                   data-ocid="chat.primary_button"
                 >
                   <Sparkles className="w-4 h-4 mr-2" />
-                  Start Free Reading
+                  ఉచిత రీడింగ్ ప్రారంభించండి
                 </Button>
               </motion.div>
             )}
@@ -521,22 +479,22 @@ export function ChatSection() {
                   <Crown className="w-7 h-7 text-amber-400" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">
-                  Upgrade to Premium Astrology Chat
+                  ప్రీమియం జ్యోతిష్య చాట్‌కు అప్‌గ్రేడ్ చేయండి
                 </h3>
                 <p className="text-muted-foreground max-w-sm mb-6">
-                  Pay securely via Razorpay to unlock 1 hour of unlimited Vedic
-                  astrology guidance.
+                  1 గంట అపరిమిత వేద జ్యోతిష్య మార్గదర్శకత్వాన్ని అన్‌లాక్ చేయడానికి Razorpay ద్వారా
+                  సురక్షితంగా చెల్లించండి.
                 </p>
                 <div className="bg-amber-400/5 border border-amber-400/30 rounded-2xl px-8 py-5 mb-8 w-full max-w-xs">
                   <div className="text-4xl font-bold text-amber-400 mb-1">
                     ₹100
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    1 Hour — Unlimited Questions
+                    1 గంట — అపరిమిత ప్రశ్నలు
                   </div>
                   <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground/70">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
-                    Secure payment via Razorpay
+                    Razorpay ద్వారా సురక్షిత చెల్లింపు
                   </div>
                 </div>
                 <Button
@@ -546,7 +504,7 @@ export function ChatSection() {
                   data-ocid="chat.primary_button"
                 >
                   <Crown className="w-4 h-4 mr-2" />
-                  Pay ₹100 via Razorpay
+                  Razorpay ద్వారా ₹100 చెల్లించండి
                 </Button>
                 {premiumPaymentOpened && (
                   <motion.div
@@ -555,7 +513,7 @@ export function ChatSection() {
                     className="w-full max-w-xs"
                   >
                     <p className="text-xs text-muted-foreground mb-2">
-                      Completed payment? Click below to continue.
+                      చెల్లింపు పూర్తైందా? కొనసాగించడానికి దిగువ క్లిక్ చేయండి.
                     </p>
                     <Button
                       type="button"
@@ -564,7 +522,7 @@ export function ChatSection() {
                       className="w-full rounded-full py-3 h-auto font-semibold border-amber-400/40 text-amber-400 hover:bg-amber-400/10"
                       data-ocid="chat.confirm_button"
                     >
-                      ✅ I've Paid — Upload Screenshot
+                      ✅ చెల్లించాను — స్క్రీన్‌షాట్ అప్‌లోడ్ చేయండి
                     </Button>
                   </motion.div>
                 )}
@@ -573,7 +531,7 @@ export function ChatSection() {
                   onClick={() => setPhase("chat")}
                   className="mt-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Go back to chat
+                  చాట్‌కు తిరిగి వెళ్ళండి
                 </button>
               </motion.div>
             )}
@@ -593,11 +551,11 @@ export function ChatSection() {
                       <ImageUp className="w-7 h-7 text-amber-400" />
                     </div>
                     <h3 className="text-xl font-bold text-foreground mb-2">
-                      Verify Your Payment
+                      మీ చెల్లింపును ధృవీకరించండి
                     </h3>
                     <p className="text-muted-foreground max-w-sm mb-6">
-                      Upload your Razorpay payment screenshot to activate your
-                      Premium session.
+                      మీ ప్రీమియం సెషన్‌ను సక్రియం చేయడానికి మీ Razorpay చెల్లింపు స్క్రీన్‌షాట్‌ను అప్‌లోడ్
+                      చేయండి.
                     </p>
                     <input
                       ref={fileInputRef}
@@ -614,10 +572,10 @@ export function ChatSection() {
                       >
                         <ImageUp className="w-8 h-8" />
                         <span className="text-sm font-medium">
-                          Click to upload payment screenshot
+                          చెల్లింపు స్క్రీన్‌షాట్ అప్‌లోడ్ చేయడానికి క్లిక్ చేయండి
                         </span>
                         <span className="text-xs opacity-70">
-                          JPG, PNG, or any image format
+                          JPG, PNG లేదా ఏదైనా చిత్ర ఫార్మాట్
                         </span>
                       </button>
                     ) : (
@@ -637,7 +595,7 @@ export function ChatSection() {
                           }}
                           className="mt-2 text-xs text-muted-foreground hover:text-amber-400 underline"
                         >
-                          Remove and upload a different image
+                          తొలగించి వేరే చిత్రాన్ని అప్‌లోడ్ చేయండి
                         </button>
                       </div>
                     )}
@@ -651,10 +609,10 @@ export function ChatSection() {
                       {verifying ? (
                         <>
                           <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                          Verifying payment...
+                          చెల్లింపు ధృవీకరిస్తున్నాం...
                         </>
                       ) : (
-                        "Submit for Verification"
+                        "ధృవీకరణకు సమర్పించండి"
                       )}
                     </Button>
                   </>
@@ -668,11 +626,10 @@ export function ChatSection() {
                       <CheckCircle className="w-10 h-10 text-green-400" />
                     </div>
                     <h3 className="text-xl font-bold text-foreground mb-2">
-                      Payment Verified Successfully!
+                      చెల్లింపు విజయవంతంగా ధృవీకరించబడింది!
                     </h3>
                     <p className="text-muted-foreground mb-8">
-                      Your Premium session is ready. 1 hour of unlimited cosmic
-                      guidance awaits.
+                      మీ ప్రీమియం సెషన్ సిద్ధంగా ఉంది. 1 గంట అపరిమిత విశ్వ మార్గదర్శకత్వం వేచి ఉంది.
                     </p>
                     <Button
                       type="button"
@@ -681,7 +638,7 @@ export function ChatSection() {
                       data-ocid="chat.primary_button"
                     >
                       <Crown className="w-4 h-4 mr-2" />
-                      Activate Premium Chat
+                      ప్రీమియం చాట్ సక్రియం చేయండి
                     </Button>
                   </motion.div>
                 )}
@@ -704,8 +661,8 @@ export function ChatSection() {
                     {!isPremium && (
                       <span className="text-xs text-amber-400 font-medium">
                         {freeQuestionUsed
-                          ? "Free question used"
-                          : "1 free question"}
+                          ? "ఉచిత ప్రశ్న ఉపయోగించబడింది"
+                          : "1 ఉచిత ప్రశ్న"}
                       </span>
                     )}
                   </div>
@@ -791,9 +748,7 @@ export function ChatSection() {
                     <div className="flex items-center gap-2">
                       <Crown className="w-4 h-4 text-amber-400 flex-shrink-0" />
                       <p className="text-xs text-amber-200">
-                        {language === "te"
-                          ? "లోతైన అంచనాల కోసం Premium కి upgrade చేయండి — ₹100 / 1 గంట"
-                          : "Unlock deeper predictions — upgrade to Premium for ₹100 / 1 hour"}
+                        లోతైన అంచనాల కోసం Premium కి upgrade చేయండి — ₹100 / 1 గంట
                       </p>
                     </div>
                     <Button
@@ -802,7 +757,7 @@ export function ChatSection() {
                       className="bg-amber-400 text-navy-900 hover:bg-amber-300 border-0 rounded-full px-3 py-1.5 h-auto text-xs font-bold flex-shrink-0"
                       data-ocid="chat.primary_button"
                     >
-                      Upgrade
+                      అప్‌గ్రేడ్
                     </Button>
                   </motion.div>
                 )}
@@ -821,10 +776,8 @@ export function ChatSection() {
                     >
                       <Lock className="w-4 h-4" />
                       {isPremium && timeLeft === 0
-                        ? "Session ended — Recharge to continue"
-                        : language === "te"
-                          ? "Premium కి Upgrade చేయండి — ₹100 / 1 గంట"
-                          : "Upgrade to Premium — ₹100 / 1 hour"}
+                        ? "సెషన్ ముగిసింది — కొనసాగించడానికి రీఛార్జ్ చేయండి"
+                        : "Premium కి Upgrade చేయండి — ₹100 / 1 గంట"}
                     </button>
                   ) : (
                     <div className="flex gap-2">
@@ -834,13 +787,7 @@ export function ChatSection() {
                         onKeyDown={(e) =>
                           e.key === "Enter" && !e.shiftKey && sendMessage()
                         }
-                        placeholder={
-                          language === "te"
-                            ? "నక్షత్రాలను ఏదైనా అడగండి..."
-                            : freeQuestionUsed
-                              ? "Ask your next question..."
-                              : "Ask your free question..."
-                        }
+                        placeholder="నక్షత్రాలను ఏదైనా అడగండి..."
                         className="flex-1 bg-navy-600/50 border-navy-500 focus:border-neon focus:ring-0 text-foreground placeholder:text-muted-foreground/50 rounded-full"
                         data-ocid="chat.input"
                       />
@@ -870,42 +817,35 @@ export function ChatSection() {
         >
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-center">
-              ✨ Unlock Full Cosmic Guidance
+              ✨ పూర్తి విశ్వ మార్గదర్శకత్వం పొందండి
             </DialogTitle>
           </DialogHeader>
           <div className="text-center py-4">
             <div className="text-5xl mb-4">👑</div>
-            <p className="text-muted-foreground mb-2">
-              {language === "te"
-                ? "మీ ఉచిత ప్రశ్న ఉపయోగించబడింది."
-                : "You've used your free question."}
-            </p>
+            <p className="text-muted-foreground mb-2">మీ ఉచిత ప్రశ్న ఉపయోగించబడింది.</p>
             <p className="text-foreground font-medium mb-6">
-              {language === "te"
-                ? "వ్యక్తిగతీకరించిన విశ్లేషణ, సమయ అంచనాలు మరియు ఆధ్యాత్మిక నివారణ చర్యలతో Premium కి upgrade చేయండి."
-                : "For detailed personalized predictions with timing, remedies, and unlimited questions, upgrade to Premium Astrology Chat."}
+              వ్యక్తిగతీకరించిన విశ్లేషణ, సమయ అంచనాలు మరియు ఆధ్యాత్మిక నివారణ చర్యలతో Premium కి
+              upgrade చేయండి.
             </p>
             <div className="bg-amber-400/5 border border-amber-400/30 rounded-xl p-4 mb-6">
               <div className="text-3xl font-bold text-amber-400">₹100</div>
               <div className="text-sm text-muted-foreground">
-                Premium Astrology Chat — 1 Hour
+                ప్రీమియం జ్యోతిష్య చాట్ — 1 గంట
               </div>
               <ul className="mt-3 space-y-1 text-xs text-muted-foreground text-left">
                 <li className="flex items-center gap-2">
-                  <span className="text-amber-400">✓</span> Unlimited questions
-                  for 1 hour
+                  <span className="text-amber-400">✓</span> 1 గంట అపరిమిత ప్రశ్నలు
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-amber-400">✓</span> Deep Vedic astrology
-                  analysis
+                  <span className="text-amber-400">✓</span> లోతైన వేద జ్యోతిష్య విశ్లేషణ
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-amber-400">✓</span> Timing predictions
-                  for key life events
+                  <span className="text-amber-400">✓</span> ముఖ్య జీవిత సంఘటనలకు
+                  సమయ అంచనాలు
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-amber-400">✓</span> Spiritual remedies
-                  included
+                  <span className="text-amber-400">✓</span> ఆధ్యాత్మిక నివారణ చర్యలు
+                  చేర్చబడ్డాయి
                 </li>
               </ul>
             </div>
@@ -919,14 +859,14 @@ export function ChatSection() {
               data-ocid="chat.confirm_button"
             >
               <Crown className="w-4 h-4 mr-2" />
-              Upgrade to Premium — ₹100
+              ప్రీమియంకు అప్‌గ్రేడ్ — ₹100
             </Button>
             <button
               type="button"
               onClick={() => setShowUpgradeModal(false)}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Maybe later
+              తర్వాత చూద్దాం
             </button>
           </div>
         </DialogContent>
@@ -941,26 +881,20 @@ export function ChatSection() {
         >
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-center">
-              {language === "te" ? "✨ సెషన్ ముగిసింది" : "✨ Session Ended"}
+              ✨ సెషన్ ముగిసింది
             </DialogTitle>
           </DialogHeader>
           <div className="text-center py-4">
             <div className="text-5xl mb-4">⏰</div>
             <p className="text-muted-foreground mb-2">
-              {language === "te"
-                ? "మీ 1 గంట Premium సెషన్ ముగిసింది."
-                : "Your 1-hour Premium session has ended."}
+              మీ 1 గంట Premium సెషన్ ముగిసింది.
             </p>
             <p className="text-foreground font-medium mb-6">
-              {language === "te"
-                ? "కొనసాగించడానికి ₹100 రీఛార్జ్ చేయండి."
-                : "Recharge for ₹100 to continue your consultation."}
+              కొనసాగించడానికి ₹100 రీఛార్జ్ చేయండి.
             </p>
             <div className="bg-amber-400/5 border border-amber-400/30 rounded-xl p-4 mb-4">
               <div className="text-3xl font-bold text-amber-400">₹100</div>
-              <div className="text-sm text-muted-foreground">
-                {language === "te" ? "= మరో 1 గంట" : "= 1 More Hour"}
-              </div>
+              <div className="text-sm text-muted-foreground">= మరో 1 గంట</div>
             </div>
             <Button
               type="button"
@@ -968,7 +902,7 @@ export function ChatSection() {
               className="bg-amber-400 text-navy-900 hover:bg-amber-300 border-0 w-full rounded-full py-3 h-auto font-semibold mb-3"
               data-ocid="chat.confirm_button"
             >
-              Pay ₹100 via Razorpay
+              Razorpay ద్వారా ₹100 చెల్లించండి
             </Button>
             {rechargeOpened && (
               <motion.div
@@ -976,9 +910,7 @@ export function ChatSection() {
                 animate={{ opacity: 1, y: 0 }}
               >
                 <p className="text-xs text-muted-foreground mb-2">
-                  {language === "te"
-                    ? "చెల్లింపు పూర్తయిందా? కొనసాగించడానికి నొక్కండి."
-                    : "Payment done? Click below to resume."}
+                  చెల్లింపు పూర్తయిందా? కొనసాగించడానికి నొక్కండి.
                 </p>
                 <Button
                   type="button"
@@ -986,9 +918,7 @@ export function ChatSection() {
                   onClick={handleRecharge}
                   className="w-full rounded-full py-3 h-auto font-semibold border-amber-400/40 text-amber-400 hover:bg-amber-400/10"
                 >
-                  {language === "te"
-                    ? "✅ చెల్లించాను — చాట్ కొనసాగించు"
-                    : "✅ I've Paid — Resume Chat"}
+                  ✅ చెల్లించాను — చాట్ కొనసాగించు
                 </Button>
               </motion.div>
             )}

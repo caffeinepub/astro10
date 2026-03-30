@@ -4,23 +4,23 @@ import { motion } from "motion/react";
 const FEATURES = [
   {
     icon: <Sparkles className="w-5 h-5" />,
-    title: "Ancient Wisdom, Modern AI",
-    desc: "We blend thousands of years of Vedic astrology with cutting-edge artificial intelligence to deliver readings that resonate deeply.",
+    title: "పురాతన జ్ఞానం, ఆధునిక AI",
+    desc: "వేల సంవత్సరాల వేద జ్యోతిష్యాన్ని అత్యాధునిక కృత్రిమ మేధావితో మిళితం చేసి, లోతుగా ప్రతిధ్వనించే రీడింగ్‌లు అందిస్తాం.",
   },
   {
     icon: <Zap className="w-5 h-5" />,
-    title: "Instant Cosmic Insights",
-    desc: "No waiting, no scheduling. Get personalized readings in seconds, powered by AI trained on vast astrological knowledge.",
+    title: "తక్షణ విశ్వ అంతర్దృష్టులు",
+    desc: "వేచి ఉండటం, షెడ్యూల్ చేయడం లేదు. AI జ్యోతిష్య జ్ఞానం ఆధారంగా వ్యక్తిగతీకరించిన రీడింగ్‌లు సెకన్లలో పొందండి.",
   },
   {
     icon: <Shield className="w-5 h-5" />,
-    title: "Private & Confidential",
-    desc: "Your birth data and conversations are completely private. We never share your personal information with third parties.",
+    title: "ప్రైవేట్ & గోప్యంగా",
+    desc: "మీ జన్మ వివరాలు మరియు సంభాషణలు పూర్తిగా ప్రైవేట్‌గా ఉంటాయి. మేము మీ వ్యక్తిగత సమాచారాన్ని ఎప్పుడూ మూడవ పక్షాలతో పంచుకోము.",
   },
   {
     icon: <Heart className="w-5 h-5" />,
-    title: "Compassionate Guidance",
-    desc: "Our AI Astrologer provides guidance with empathy and nuance, helping you navigate life's complexities with cosmic clarity.",
+    title: "దయతో కూడిన మార్గదర్శకత్వం",
+    desc: "మా AI జ్యోతిష్యుడు సానుభూతి మరియు సూక్ష్మతతో మార్గదర్శకత్వం అందిస్తాడు, విశ్వ స్పష్టతతో జీవిత సంక్లిష్టతలను నావిగేట్ చేయడంలో మీకు సహాయం చేస్తాడు.",
   },
 ];
 
@@ -36,36 +36,30 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="section-heading mb-4">
-              About <span>Astro10</span>
+              Astro10 <span>గురించి</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Astro10 was born from a simple vision: make ancient astrological
-              wisdom accessible to everyone. For centuries, astrology was
-              reserved for those with access to learned Jyotishis and the means
-              to consult them. We believed that cosmic guidance should be
-              available to all — instantly and affordably.
+              Astro10 ఒక సరళమైన దృష్టితో జన్మించింది: పురాతన జ్యోతిష్య జ్ఞానాన్ని అందరికీ అందుబాటులో
+              తీసుకురావడం. శతాబ్దాలుగా, జ్యోతిష్యం నేర్చిన జ్యోతిష్యులు మరియు వారిని సంప్రదించే సాధనాలున్న
+              వారికే పరిమితమైంది. విశ్వ మార్గదర్శకత్వం అందరికీ అందుబాటులో ఉండాలని మేము విశ్వసించాము —
+              తక్షణంగా మరియు సరసమైన ధరకు.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Our AI Astrologer is trained on thousands of verified birth charts
-              and classical Vedic texts, delivering readings that go far beyond
-              sun sign generalizations. At just ₹10 for 5 minutes, we've made
-              cosmic clarity accessible to every seeker.
+              మా AI జ్యోతిష్యుడు వేల ధృవీకరించబడిన జన్మ చార్ట్‌లు మరియు శాస్త్రీయ వేద గ్రంథాల ఆధారంగా
+              శిక్షణ పొందాడు, సూర్య రాశి సాధారణీకరణలకు మించిన రీడింగ్‌లు అందిస్తాడు. ₹100కే 1 గంట
+              ప్రీమియం మార్గదర్శకత్వంతో, మేము విశ్వ స్పష్టతను ప్రతి అన్వేషకుడికి అందుబాటులో తెచ్చాం.
             </p>
             <div className="flex flex-wrap gap-3">
-              {[
-                "Vedic Astrology",
-                "Birth Chart",
-                "Kundli",
-                "Compatibility",
-                "Transit Readings",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 rounded-full text-xs font-medium bg-neon/10 text-neon border border-neon-border"
-                >
-                  {tag}
-                </span>
-              ))}
+              {["వేద జ్యోతిష్యం", "జన్మ చార్ట్", "కుండలి", "అనుకూలత", "ట్రాన్సిట్ రీడింగ్‌లు"].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full text-xs font-medium bg-neon/10 text-neon border border-neon-border"
+                  >
+                    {tag}
+                  </span>
+                ),
+              )}
             </div>
           </motion.div>
 

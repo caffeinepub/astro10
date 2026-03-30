@@ -35,7 +35,7 @@ export function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-border bg-neon/5 text-neon text-sm font-medium mb-8"
         >
           <Sparkles className="w-4 h-4" />
-          <span>AI-Powered Vedic Astrology</span>
+          <span>AI-ఆధారిత వేద జ్యోతిష్యం</span>
         </motion.div>
 
         <motion.h1
@@ -44,9 +44,9 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6"
         >
-          Talk to a Vedic Astrologer
+          వేద జ్యోతిష్యుడితో మాట్లాడండి
           <br />
-          <span className="gradient-text">First Question Free</span>
+          <span className="gradient-text">మొదటి ప్రశ్న ఉచితం</span>
         </motion.h1>
 
         <motion.p
@@ -55,9 +55,8 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Unlock your cosmic destiny with personalized readings based on your
-          birth chart. Get instant insights on love, career, and life — powered
-          by ancient Vedic wisdom.
+          మీ జన్మ చార్ట్ ఆధారంగా వ్యక్తిగతీకరించిన రీడింగ్‌లతో మీ విశ్వ విధిని తెలుసుకోండి. ప్రేమ, వృత్తి మరియు
+          జీవితంపై తక్షణ అంతర్దృష్టులు పొందండి — వేల సంవత్సరాల వేద జ్ఞానం ఆధారంగా.
         </motion.p>
 
         <motion.div
@@ -73,7 +72,7 @@ export function HeroSection() {
             data-ocid="hero.primary_button"
           >
             <Sparkles className="w-5 h-5" />
-            Start Free Chat
+            ఉచిత చాట్ ప్రారంభించండి
           </button>
           <button
             type="button"
@@ -81,7 +80,7 @@ export function HeroSection() {
             className="btn-outline-neon px-8 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2 justify-center"
             data-ocid="hero.secondary_button"
           >
-            View Horoscopes
+            రాశిఫలాలు చూడండి
           </button>
         </motion.div>
 
@@ -92,10 +91,10 @@ export function HeroSection() {
           className="mt-16 flex flex-wrap justify-center gap-8 text-center"
         >
           {[
-            { value: "50K+", label: "Readings Done" },
-            { value: "4.9★", label: "Average Rating" },
-            { value: "12", label: "Zodiac Signs" },
-            { value: "₹100", label: "Premium Plan" },
+            { value: "50K+", label: "రీడింగ్‌లు పూర్తయ్యాయి" },
+            { value: "4.9★", label: "సగటు రేటింగ్" },
+            { value: "12", label: "రాశి చిహ్నాలు" },
+            { value: "₹100", label: "ప్రీమియం ప్లాన్" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="text-2xl font-bold text-neon">{stat.value}</div>

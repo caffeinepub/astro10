@@ -3,13 +3,13 @@ import { Menu, Star, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Horoscopes", href: "#horoscope" },
-  { label: "AI Reading", href: "#chat" },
-  { label: "Predictions", href: "#predictions" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "హోమ్", href: "#home" },
+  { label: "రాశిఫలాలు", href: "#horoscope" },
+  { label: "AI రీడింగ్", href: "#chat" },
+  { label: "అంచనాలు", href: "#predictions" },
+  { label: "ధర", href: "#pricing" },
+  { label: "మా గురించి", href: "#about" },
+  { label: "సంప్రదించండి", href: "#contact" },
 ];
 
 export function Header() {
@@ -79,7 +79,7 @@ export function Header() {
             className="hidden sm:flex btn-neon rounded-full px-5 py-2 text-sm h-auto"
             data-ocid="header.primary_button"
           >
-            Get Started
+            ప్రారంభించండి
           </Button>
           <button
             type="button"
@@ -118,7 +118,7 @@ export function Header() {
               className="mt-2 btn-neon rounded-full h-auto py-2"
               data-ocid="header.primary_button"
             >
-              Get Started
+              ప్రారంభించండి
             </Button>
           </nav>
         </div>
